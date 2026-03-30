@@ -31,6 +31,10 @@ def ladda_citat_fran_fil(filnamn):
 
 
 def spara_citat_till_fil(citatlista, filnamn):
+
+    with open(filnamn, "w") as fil:
+        for citat in citatlista:
+            fil.write(citat + "\n")
     """
     Sparar alla citat till en textfil.
     
@@ -92,7 +96,7 @@ def huvudprogram():
     Huvudprogrammet som styr menyn och programflödet.
     """
 
-    citat = ladda_citat_fran_fil("citat.txt")
+    ladda_citat_fran_fil("citat.txt")
     # TODO: Implementera huvudprogrammet
     # 1. Ladda befintliga citat med ladda_citat_fran_fil()
     # 2. Skapa en while-loop som visar menyn
